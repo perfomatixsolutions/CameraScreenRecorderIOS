@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RecordVideo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dKN-rm-1Df" customClass="JVDrawingView">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Yi-ue-KeR" customClass="JVDrawingLayer">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="edO-Z2-4yS">
+                                <rect key="frame" x="112.5" y="643" width="189" height="107"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="189" id="fbQ-yv-av3"/>
+                                    <constraint firstAttribute="height" constant="107" id="wxj-BG-X0N"/>
+                                </constraints>
+                                <state key="normal" title="Record Start"/>
+                                <connections>
+                                    <action selector="recordButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="S2x-2i-kR2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2yR-Co-zVX">
+                                <rect key="frame" x="137.5" y="768" width="139" height="94"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="94" id="BqA-Vc-w5L"/>
+                                    <constraint firstAttribute="width" constant="139" id="tdx-Ry-O6p"/>
+                                </constraints>
+                                <state key="normal" title="Record stop"/>
+                                <connections>
+                                    <action selector="stoprecord:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VIY-PX-E5Z"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="2yR-Co-zVX" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="0AP-xM-yen"/>
+                            <constraint firstItem="dKN-rm-1Df" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="2SB-wv-OCi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dKN-rm-1Df" secondAttribute="trailing" id="8zH-CC-xJ0"/>
+                            <constraint firstItem="edO-Z2-4yS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="D9N-vA-OwX"/>
+                            <constraint firstAttribute="bottom" secondItem="1Yi-ue-KeR" secondAttribute="bottom" id="EdF-Uu-cU6"/>
+                            <constraint firstItem="2yR-Co-zVX" firstAttribute="top" secondItem="edO-Z2-4yS" secondAttribute="bottom" constant="18" id="FJ0-2q-VIf"/>
+                            <constraint firstItem="2yR-Co-zVX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="j8U-iw-lDe"/>
+                            <constraint firstItem="1Yi-ue-KeR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="leJ-W7-xCR"/>
+                            <constraint firstItem="dKN-rm-1Df" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="net-06-PRW"/>
+                            <constraint firstAttribute="bottom" secondItem="dKN-rm-1Df" secondAttribute="bottom" id="nr6-LB-8EJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1Yi-ue-KeR" secondAttribute="trailing" id="t2G-yE-ftl"/>
+                            <constraint firstItem="1Yi-ue-KeR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="uJh-Oo-NDw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="annotationView" destination="1Yi-ue-KeR" id="9eJ-lY-Frh"/>
+                        <outlet property="drawing" destination="dKN-rm-1Df" id="xek-WO-bFP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="138.61607142857142"/>
+        </scene>
+    </scenes>
+</document>
